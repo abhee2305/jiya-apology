@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sorry Jiya 💝</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Poppins", sans-serif;
+      background: linear-gradient(to bottom right, #ffe6f2, #fff0f5);
+      overflow-x: hidden;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      padding: 20px;
+    }
+
+    .card {
+      max-width: 450px;
+      background: white;
+      padding: 20px;
+      border-radius: 20px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+      text-align: center;
+      animation: float 4s ease-in-out infinite;
+    }
+
+    .card h1 {
+      color: #d6336c;
+      font-size: 2rem;
+      margin-bottom: 15px;
+    }
+
+    .card p {
+      color: #444;
+      font-size: 1.1rem;
+      margin-bottom: 20px;
+    }
+
+    button {
+      background: #ff4d88;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 25px;
+      color: white;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+
+    button:hover {
+      transform: scale(1.1);
+      background: #e6005c;
+    }
+
+    .anime-girl {
+      max-height: 450px;
+      margin-left: 40px;
+      animation: bounce 3s infinite ease-in-out;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-20px); }
+    }
+
+    /* Floating hearts */
+    .heart {
+      position: absolute;
+      font-size: 24px;
+      color: #ff4d88;
+      animation: rise 5s linear infinite;
+    }
+
+    @keyframes rise {
+      0% { transform: translateY(100vh); opacity: 1; }
+      100% { transform: translateY(-10vh); opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="card">
+      <h1>💌 Sorry Jiya 💌</h1>
+      <p>I messed up… and I know it hurt you.  
+         Please forgive me — our bond means everything. 💖</p>
+      <button onclick="showMessage()">Read My Heart</button>
+      <div id="messageBox" style="display:none; margin-top:15px; color:#d6336c; font-weight:bold;"></div>
+    </div>
+    
+    <!-- Anime Girl -->
+    <img src="E:\java Script\jiya\ChatGPT Image Oct 2, 2025, 01_28_20 AM.png" 
+         alt="Anime Girl Apology" 
+         class="anime-girl">
+  </div>
+
+  <script>
+    const messages = [
+      "I value you more than words can ever say.",
+      "I’m truly sorry for blaming you.",
+      "Your smile means everything to me.",
+      "Let’s move forward together. 💕",
+      "Forgive me, Jiya. You’re irreplaceable."
+    ];
+    let index = 0;
+
+    function showMessage() {
+      const box = document.getElementById("messageBox");
+      box.style.display = "block";
+      box.textContent = messages[index];
+      index = (index + 1) % messages.length;
+      spawnHeart();
+    }
+
+    function spawnHeart() {
+      const heart = document.createElement("div");
+      heart.className = "heart";
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.fontSize = (20 + Math.random() * 20) + "px";
+      heart.textContent = "❤️";
+      document.body.appendChild(heart);
+      setTimeout(() => heart.remove(), 5000);
+    }
+  </script>
+</body>
+</html>
